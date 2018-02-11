@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".BasicDataTypeActivity" />
+        <activity android:name=".StringTestActivity" />
     </application>
 
 </manifest>

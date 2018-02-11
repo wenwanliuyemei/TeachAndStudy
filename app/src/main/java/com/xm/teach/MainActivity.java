@@ -24,6 +24,7 @@ public class MainActivity extends BaseActivity {
     Button btn_show_data;
     Button btn_show_toast;
     Button btn_basic_data_type;
+    Button btn_string;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class MainActivity extends BaseActivity {
         btn_show_data = (Button) findViewById(R.id.btn_show_data);
         btn_show_toast = (Button) findViewById(R.id.btn_show_toast);
         btn_basic_data_type = (Button) findViewById(R.id.btn_basic_data_type);
+        btn_string = (Button) findViewById(R.id.btn_string);
     }
 
     @Override
@@ -63,13 +65,17 @@ public class MainActivity extends BaseActivity {
                 basicDataType();
             }
         });
+        btn_string.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stringTest();
+            }
+        });
     }
 
     private void showData() {
         tv_show_data.setText(getData());
     }
-
-
 
     private String getData() {
         return TextUtils.isEmpty(edt_putin_data.getText()) ? "默认数据" : edt_putin_data.getText().toString();
@@ -79,5 +85,7 @@ public class MainActivity extends BaseActivity {
         intent(MainActivity.this, BasicDataTypeActivity.class);
     }
 
-
+    private void stringTest() {
+        intent(MainActivity.this, StringTestActivity.class);
+    }
 }
