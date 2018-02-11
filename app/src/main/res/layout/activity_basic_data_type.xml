@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.xm.teach.BasicDataTypeActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edt_putin_data_1"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#eeddcc"
+            android:gravity="center"
+            android:hint="数据"
+            android:inputType="numberSigned|numberDecimal"
+            android:text="" />
+
+
+        <EditText
+            android:id="@+id/edt_operator"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#eeddcc"
+            android:digits="+-*/"
+            android:gravity="center"
+            android:hint="运算符"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/edt_putin_data_2"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#eeddcc"
+            android:gravity="center"
+            android:hint="数据"
+            android:inputType="numberSigned|numberDecimal"
+            android:text="" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_show_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="结果"
+        android:text="" />
+
+
+    <Button
+        android:id="@+id/btn_show_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="点击按钮，显示运算结果" />
+
+</LinearLayout>

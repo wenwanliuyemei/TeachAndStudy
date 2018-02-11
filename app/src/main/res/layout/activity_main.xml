@@ -38,4 +38,13 @@
         android:layout_margin="10dp"
         android:text="点击按钮，显示toast" />
 
+    <Button
+        android:id="@+id/btn_basic_data_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="基本数据类型" />
+
+
+
 </LinearLayout>

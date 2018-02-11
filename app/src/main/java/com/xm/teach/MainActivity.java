@@ -1,6 +1,5 @@
 package com.xm.teach;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,16 +13,17 @@ import android.widget.Toast;
 //3、点击按钮，显示EditText中的数据。
 //4、点击按钮，显示EditText中的数据，Toast提示。
 //5、TextView、Button、EditText
-//6、基本数据类型。int、long、double、String。
+//6、基本数据类型。int、long、float、double、String。
 //7、类、属性、方法。
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     TextView tv_show_data;
     EditText edt_putin_data;
     Button btn_show_data;
     Button btn_show_toast;
+    Button btn_basic_data_type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +33,17 @@ public class MainActivity extends AppCompatActivity {
         setListener();
     }
 
-    private void initView() {
+    @Override
+    public void initView() {
         tv_show_data = (TextView) findViewById(R.id.tv_show_data);
         edt_putin_data = (EditText) findViewById(R.id.edt_putin_data);
         btn_show_data = (Button) findViewById(R.id.btn_show_data);
         btn_show_toast = (Button) findViewById(R.id.btn_show_toast);
+        btn_basic_data_type = (Button) findViewById(R.id.btn_basic_data_type);
     }
 
-    private void setListener() {
+    @Override
+    public void setListener() {
         btn_show_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +54,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showData();
-                showToast();
+                showToast(getData());
+            }
+        });
+        btn_basic_data_type.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                basicDataType();
             }
         });
     }
@@ -60,11 +69,15 @@ public class MainActivity extends AppCompatActivity {
         tv_show_data.setText(getData());
     }
 
-    private void showToast() {
-        Toast.makeText(MainActivity.this, getData(), Toast.LENGTH_SHORT).show();
-    }
+
 
     private String getData() {
         return TextUtils.isEmpty(edt_putin_data.getText()) ? "默认数据" : edt_putin_data.getText().toString();
     }
+
+    private void basicDataType() {
+        intent(MainActivity.this, BasicDataTypeActivity.class);
+    }
+
+
 }
